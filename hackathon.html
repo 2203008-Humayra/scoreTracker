@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hackathon | ScoreSphere</title>
+
+    <link rel="stylesheet" href="hackathon.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+
+    <main class="container">
+
+        <!-- Heading -->
+
+        <section class="hero">
+
+            <h1>Hackathon</h1>
+
+            <p>Team Evaluation • Live Scoring • Leaderboard</p>
+
+        </section>
+
+
+
+        <!-- Setup -->
+
+        <section class="setup">
+
+            <h2>Team Setup</h2>
+
+            <div class="inputs">
+
+                <div class="input-box">
+
+                    <label>Team Name</label>
+
+                    <input id="teamNameInput" type="text" placeholder="Enter team name">
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Project Title</label>
+
+                    <input id="projectInput" type="text" placeholder="Enter project title (optional)">
+
+                </div>
+
+            </div>
+
+            <button id="addTeamBtn" class="start-btn">
+
+                <i class="fa-solid fa-plus"></i>
+                Add Team
+
+            </button>
+
+        </section>
+
+
+
+        <!-- Judging Panel -->
+
+        <section class="dashboard">
+
+            <h2>
+
+                <i class="fa-solid fa-gavel"></i>
+                Judging Panel
+
+            </h2>
+
+            <p class="hint">Score each team from 0–10 across the criteria below.</p>
+
+            <div id="teamsList" class="teams-list">
+
+                <p class="empty-state" id="emptyState">No teams added yet...</p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Leaderboard -->
+
+        <section class="history">
+
+            <h2>
+
+                <i class="fa-solid fa-ranking-star"></i>
+                Leaderboard
+
+            </h2>
+
+            <ul id="leaderboard">
+
+                <li>No scores yet...</li>
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- Breakdown -->
+
+        <section class="prediction">
+
+            <h2>
+
+                <i class="fa-solid fa-chart-pie"></i>
+                Criteria Breakdown
+
+            </h2>
+
+            <div class="prediction-box" id="criteriaBreakdown">
+
+                <div>
+
+                    <h3>Top Innovation</h3>
+                    <p id="topInnovation">--</p>
+
+                </div>
+
+                <div>
+
+                    <h3>Top Execution</h3>
+                    <p id="topExecution">--</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Graph -->
+
+        <section class="graph">
+
+            <button class="graph-btn">
+
+                <i class="fa-solid fa-chart-column"></i>
+                View Analytics
+
+            </button>
+
+            <div id="graphArea" class="graph-area">
+
+                <canvas id="scoreChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Winner -->
+
+        <section class="winner">
+
+            <i class="fa-solid fa-trophy"></i>
+
+            <h2>Champion</h2>
+
+            <h1 id="winnerText">--</h1>
+
+            <button id="declareWinnerBtn" class="start-btn">
+
+                Declare Winner
+
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="hackathon.js"></script>
+
+</body>
+
+</html>
