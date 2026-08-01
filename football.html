@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Football Match | ScoreSphere</title>
+
+    <link rel="stylesheet" href="football.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+
+    <main class="container">
+
+        <!-- Heading -->
+
+        <section class="hero">
+
+            <h1>Football Match</h1>
+
+            <p>Live Match Scoring • Predictions • Statistics</p>
+
+        </section>
+
+
+
+        <!-- Match Setup -->
+
+        <section class="setup">
+
+            <h2>Match Setup</h2>
+
+            <div class="competition">
+
+                <div class="option" id="interOption">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h3>Inter University</h3>
+                </div>
+
+                <div class="option" id="intraOption">
+                    <i class="fa-solid fa-school"></i>
+                    <h3>Intra University</h3>
+                </div>
+
+            </div>
+
+
+            <div class="inputs">
+
+                <div class="input-box">
+
+                    <label>Team 1</label>
+
+                    <input id="team1Input" type="text" placeholder="Enter Team Name">
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Team 2</label>
+
+                    <input id="team2Input" type="text" placeholder="Enter Team Name">
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Match Time (Minutes)</label>
+
+                    <input id="matchTime" type="number" placeholder="90">
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Break Time (Minutes)</label>
+
+                    <input id="breakTime" type="number" placeholder="15">
+
+                </div>
+
+            </div>
+
+            <button id="startMatch" class="start-btn">
+
+                Start Match
+
+            </button>
+
+        </section>
+
+
+
+        <!-- Live Dashboard -->
+
+        <section class="dashboard">
+
+            <h2>Live Scoreboard</h2>
+
+            <div class="scoreboard">
+
+                <!-- Team 1 -->
+
+                <div class="team">
+
+                    <h3 id="team1Name">Team 1</h3>
+
+                    <div class="score-buttons">
+
+                        <button id="team1Minus">−</button>
+                        <button id="team1Plus">+</button>
+
+                    </div>
+
+            </div>
+
+            <!-- Score -->
+
+            <div class="score">
+
+                <span id="score1">0</span>
+
+                <span>:</span>
+
+                <span id="score2">0</span>
+
+            </div>
+
+            <!-- Team 2 -->
+
+            <div class="team">
+
+                <h3 id="team2Name">Team 2</h3>
+
+                <div class="score-buttons">
+
+                    <button id="team2Minus">−</button>
+                    <button id="team2Plus">+</button>
+
+                </div>
+
+            </div>
+
+    </div>
+
+</section>
+
+
+
+        <!-- Match Timer -->
+
+        <section class="timer">
+
+            <h2>
+
+                <i class="fa-regular fa-clock"></i>
+
+                Match Timer
+
+            </h2>
+
+            <h1 id="timerDisplay">00:00</h1>
+
+            <p id="matchStatus">Waiting to Start...</p>
+
+        </section>
+
+
+
+        <!-- Goal History -->
+
+        <section class="history">
+
+            <h2>
+
+                <i class="fa-solid fa-futbol"></i>
+
+                Goal History
+
+            </h2>
+
+            <ul id="goalHistory">
+
+                <li>No goals yet...</li>
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- Prediction -->
+
+        <section class="prediction">
+
+            <h2>
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Winning Prediction
+
+            </h2>
+
+            <div class="prediction-box">
+
+                <div>
+
+                    <h3>Team 1</h3>
+
+                    <p id="prediction1">50%</p>
+
+                </div>
+
+                <div>
+
+                    <h3>Team 2</h3>
+
+                    <p id="prediction2">50%</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Graph -->
+
+        <section class="graph">
+
+            <button class="graph-btn">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                View Analytics
+
+            </button>
+
+            <div id="graphArea" class="graph-area">
+
+                <canvas id="scoreChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Winner -->
+
+        <section class="winner">
+
+            <i class="fa-solid fa-trophy"></i>
+
+            <h2>Winner</h2>
+
+            <h1 id="winnerText">--</h1>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="football.js"></script>
+
+</body>
+
+</html>

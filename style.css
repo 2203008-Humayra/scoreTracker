@@ -1,0 +1,238 @@
+/* ==========================
+   Google Font & Reset
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    font-size:16px;
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:2rem;
+
+    color:#fff;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.78),
+        rgba(0,0,0,.78)
+    ),
+    url("bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+/* ==========================
+      Container
+========================== */
+
+.container{
+
+    width:100%;
+    max-width:1200px;
+
+    text-align:center;
+}
+
+/* ==========================
+      Hero Section
+========================== */
+
+.hero{
+
+    margin-bottom:4rem;
+}
+
+.hero h1{
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(255,255,255,0.15);
+}
+
+.hero p{
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.85);
+}
+
+/* ==========================
+      Cards
+========================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:2rem;
+}
+
+.card{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:2.5rem 2rem;
+
+    border-radius:22px;
+
+    background:rgba(25,25,25,.45);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:0 10px 35px rgba(0,0,0,.45);
+
+    transition:.4s ease;
+}
+
+/* ==========================
+        Icons
+========================== */
+
+.card i{
+
+    font-size:3.4rem;
+
+    color:silver;
+
+    margin-bottom:1.2rem;
+
+    transition:.4s;
+}
+
+.card h2{
+
+    margin-bottom:1rem;
+
+    font-size:1.5rem;
+}
+
+.card p{
+
+    color:#d4d4d4;
+
+    line-height:1.7;
+
+    font-size:.95rem;
+}
+
+/* ==========================
+      Hover Effects
+========================== */
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border:1px solid silver;
+
+    background:rgba(40,40,40,.58);
+
+    box-shadow:
+    0 0 18px rgba(255,255,255,.18),
+    0 0 35px rgba(192,192,192,.20);
+}
+
+.card:hover i{
+
+    transform:scale(1.15);
+
+    color:white;
+}
+
+/* ==========================
+     Title Shine Animation
+========================== */
+
+@keyframes shine{
+
+    0%{
+
+        filter:brightness(1);
+    }
+
+    50%{
+
+        filter:brightness(1.5);
+    }
+
+    100%{
+
+        filter:brightness(1);
+    }
+}
+
+/* ==========================
+      Mobile
+========================== */
+
+@media (max-width:768px){
+
+    body{
+
+        padding:1.5rem;
+    }
+
+    .hero{
+
+        margin-bottom:3rem;
+    }
+
+    .cards{
+
+        gap:1.5rem;
+    }
+
+    .card{
+
+        padding:2rem 1.5rem;
+    }
+
+}
+
+/* ==========================
+     Small Phones
+========================== */
+
+@media (max-width:480px){
+
+    body{
+
+        padding:1rem;
+    }
+
+    .hero h1{
+
+        letter-spacing:2px;
+    }
+
+    .card{
+
+        padding:1.8rem 1.3rem;
+    }
+
+}
