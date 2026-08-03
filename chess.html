@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Match | ScoreSphere</title>
+
+    <link rel="stylesheet" href="chess.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <main class="container">
+        <section class="hero">
+            <h1>Chess Match</h1>
+            <p>Live Chess Clock &bull; Move History &bull; Game Analytics</p>
+        </section>
+
+        <section class="setup">
+            <h2>Game Setup</h2>
+
+            <div class="competition">
+                <div class="option" id="interOption">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h3>Inter University</h3>
+                </div>
+                <div class="option" id="intraOption">
+                    <i class="fa-solid fa-school"></i>
+                    <h3>Intra University</h3>
+                </div>
+            </div>
+
+            <div class="inputs">
+                <div class="input-box">
+                    <label>White Player</label>
+                    <input id="player1Input" type="text" placeholder="Enter White Player Name">
+                </div>
+                <div class="input-box">
+                    <label>Black Player</label>
+                    <input id="player2Input" type="text" placeholder="Enter Black Player Name">
+                </div>
+                <div class="input-box">
+                    <label>Game Mode</label>
+                    <select id="gameMode">
+                        <option value="10">Rapid (10 minutes)</option>
+                        <option value="5">Blitz (5 minutes)</option>
+                        <option value="15">Classical (15 minutes)</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label>Increment (Seconds)</label>
+                    <input id="incrementTime" type="number" min="0" value="0" placeholder="0">
+                </div>
+            </div>
+
+            <button id="startMatch" class="start-btn">Start Game</button>
+        </section>
+
+        <section class="dashboard">
+            <h2>Live Scoreboard</h2>
+            <div class="scoreboard">
+                <div class="team white-player">
+                    <i class="fa-solid fa-chess-king"></i>
+                    <h3 id="player1Name">White Player</h3>
+                    <p>White Pieces</p>
+                    <div class="score-buttons">
+                        <button id="player1Minus" title="Undo white capture">&minus;</button>
+                        <button id="player1Plus" title="Add white capture">+</button>
+                    </div>
+                </div>
+
+                <div class="score">
+                    <span id="score1">0</span><span>:</span><span id="score2">0</span>
+                    <small>Captured Material</small>
+                </div>
+
+                <div class="team black-player">
+                    <i class="fa-solid fa-chess-king"></i>
+                    <h3 id="player2Name">Black Player</h3>
+                    <p>Black Pieces</p>
+                    <div class="score-buttons">
+                        <button id="player2Minus" title="Undo black capture">&minus;</button>
+                        <button id="player2Plus" title="Add black capture">+</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timer">
+            <h2><i class="fa-regular fa-clock"></i> Chess Clock</h2>
+            <div class="clock-grid">
+                <button class="clock" id="player1Clock" title="Switch to Black's turn">
+                    <span id="player1ClockName">White</span>
+                    <strong id="timerDisplay1">10:00</strong>
+                </button>
+                <button class="clock" id="player2Clock" title="Switch to White's turn">
+                    <span id="player2ClockName">Black</span>
+                    <strong id="timerDisplay2">10:00</strong>
+                </button>
+            </div>
+            <p id="matchStatus">Waiting to Start...</p>
+            <div class="game-actions">
+                <button id="drawGame" class="secondary-btn">Offer Draw</button>
+                <button id="resignGame" class="secondary-btn">Resign Current Turn</button>
+                <button id="resetGame" class="secondary-btn">Reset Game</button>
+            </div>
+        </section>
+
+        <section class="history">
+            <h2><i class="fa-solid fa-chess-pawn"></i> Move History</h2>
+            <div class="move-entry">
+                <input id="moveInput" type="text" placeholder="Enter move notation, e.g. Nf3 or Qxd5">
+                <button id="addMove" class="secondary-btn">Add Move</button>
+            </div>
+            <ul id="moveHistory"><li>No moves yet...</li></ul>
+        </section>
+
+        <section class="prediction">
+            <h2><i class="fa-solid fa-chart-line"></i> Winning Prediction</h2>
+            <div class="prediction-box">
+                <div><h3 id="predictionName1">White Player</h3><p id="prediction1">50%</p></div>
+                <div><h3 id="predictionName2">Black Player</h3><p id="prediction2">50%</p></div>
+            </div>
+        </section>
+
+        <section class="graph">
+            <button id="graphButton" class="graph-btn"><i class="fa-solid fa-chart-column"></i> View Analytics</button>
+            <div id="graphArea" class="graph-area">
+                <canvas id="scoreChart"></canvas>
+            </div>
+        </section>
+
+        <section class="winner">
+            <i class="fa-solid fa-trophy"></i>
+            <h2>Winner</h2>
+            <h1 id="winnerText">--</h1>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chess.js"></script>
+</body>
+
+</html>
